@@ -172,7 +172,12 @@ header .contacts {
 .contact-item+.contact-item { 
     margin-left: 50px;
 }
-
+.contact-item.email {
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .contact-link {
     color: var(--primary-text-color);
@@ -181,14 +186,29 @@ header .contacts {
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
+
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    fill: #757575;
+    align-items: flex-start;
+  
+}
+
+.contact-link-text {
+    display: block;
+  
 }
 
 .contact-link:hover,
 .contact-link:focus {
     color: var(--accent-text-color);
+    fill: var(--accent-text-color);
 }
 
-
+.contact-icon {
+   
+}
 
 
 .container { 
@@ -202,11 +222,13 @@ header .contacts {
 /* hero */
 
 .hero {
-    width: 1600px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 200px 0;
-
-    background-color: #2F303A;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)), url(../images/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+        /* background-color: #2F303A; */
     text-align: center;
 
 }
@@ -264,17 +286,20 @@ border-color: var(--accent-text-color);
     padding-bottom: 95px;
 }
 
+.feature-list {
+    display: block;
+    display: flex;
+}
+
 .about-item+.about-item {
     margin-left: 30px;
 }
 
-.feature-list {
-    display: block;   
-     display: flex;
-    }
 
 .about-item {
-    flex-grow: 1;
+    max-width: 270px;
+
+    
 }
 
 
@@ -294,6 +319,34 @@ border-color: var(--accent-text-color);
 
 }
 
+.about-title::before {
+    content: "";
+    height: 120px;
+    display: block;
+    background-color: #F5F4FA;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70px 70px;
+}
+
+.about-item:nth-child(1) .about-title::before {
+    background-image: url(../images/antenna.svg);
+}
+
+.about-item:nth-child(2) .about-title::before {
+    background-image: url(../images/clock.svg);
+}
+
+.about-item:nth-child(3) .about-title::before {
+    background-image: url(../images/diagram.svg);
+}
+
+
+.about-item:nth-child(4) .about-title::before {
+    background-image: url(../images/astronaut.svg);
+}
 .about-desc {
     margin-bottom: 0;
     margin-top: 0px;
@@ -327,7 +380,7 @@ border-color: var(--accent-text-color);
 }
 
 
-/* Our team */
+/* -----------------Our team----------------------- */
 .our-team {
     padding: 95px 0px;
     background-color: var(--secondary-bg-color);
@@ -355,10 +408,8 @@ border-color: var(--accent-text-color);
 }
 
 .card {
-
+    min-height: 248px;
     width: 270px;
-    height: 368px;
-
     text-align: center;
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
@@ -378,7 +429,92 @@ border-color: var(--accent-text-color);
     line-height: 1.19;
     text-align: center;
 }
-/* footer */
+
+.team-soc-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+
+}
+
+
+.team-soc-item {
+    width: 44px;
+    height: 44px;
+}
+
+
+.team-soc-link {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    fill: #AFB1B8; 
+}
+
+.team-soc-link:hover,
+.team-soc-link:focus
+ {
+    fill: var(--secondary-text-color);
+    background-color: var(--accent-text-color);
+}
+
+
+/* --------------------CLAENTS---------------------- */
+
+.claentc-title {
+    margin-bottom: 50px;
+    margin-top: 0;
+        
+    color: var(--title-text-color);
+        
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+}
+
+.claents-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.claents-item {
+    width: 170px;
+    height: 92px;
+   
+
+}
+
+.claents-link {
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+
+    width: 100%;
+    height: 100%;
+    display:flex ;
+    align-items: center;
+    justify-content: center; 
+    fill: #AFB1B8;   
+}
+
+.claents-link:hover,
+.claents-link:focus {
+    fill: var(--accent-text-color);
+    border-color: var(--accent-text-color);
+}
+
+.claents-ikon {
+    display: block;
+}
+
+/* --------------------footer----------------- */
 
 .footer {
 
@@ -401,6 +537,7 @@ border-color: var(--accent-text-color);
 }
 
 .address-link {
+    display: block;
     color: var(--secondary-text-color);
     font-style: normal;
     line-height: 1.71;
@@ -414,9 +551,39 @@ address .contact-link {
     font-weight: 400;
 }
 
-/* styles portfolio */
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.footer-addres {
+    display: block;
+    min-width: 230px;
+    padding-left: 215px;
+}
 
-/* filtr batton */
+.joine-us {
+    display: block;
+    min-width: 205px;
+    padding-left: 70px;
+}
+.footer-soc {
+    background: rgba(255, 255, 255, 0.1);
+
+}
+.join-us-text {
+        padding-bottom: 16px;
+
+        font-weight: 700;
+        line-height: calc(16 / 14);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--secondary-text-color);
+}
+
+/* -----------------styles portfolio-------------- */
+
+/* ------------------filtr batton--------------- */
 
 .filtr-ptn {
     display: block;
@@ -465,7 +632,7 @@ address .contact-link {
     cursor: pointer;
    }
 
- /* works */
+ /* --------------works---------------- */
 
  .project {
     display: block;
@@ -492,15 +659,15 @@ address .contact-link {
 
  .project-item {
 
-     width: 370px;
-     height: 404px;
      
      background: #FFFFFF;
-     border: 1px solid #EEEEEE;
     }
 
 .description {
     padding: 20px 24px;
+    border-right: 1px solid #EEEEEE;
+    border-left: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
 }
 
  .project-title {
@@ -519,3 +686,11 @@ address .contact-link {
     line-height: 1.88;
     letter-spacing: 0.03em;
  }
+.project-link {
+    display: block;
+}
+
+.project-link:hover,
+.project-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
